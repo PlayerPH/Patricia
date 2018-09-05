@@ -1,0 +1,457 @@
+import math
+from math import radians, sin, cos, tan
+print('Ola eu sou a \033[1;35mPatricia\033[m sua assistente pessoal')
+
+nome = str(input('Digite seu nome: ')).upper()
+print('Bem-Vindo \033[1;31;4m{}\033[m, oque gostaria de fazer?'.format(nome))
+print('\033[31mQualquer erro reporte para \033[1;31;4mPH\033[m')
+r = 'S'
+while r == 'S':
+    from math import radians, sin, cos, tan
+    from time import sleep
+    line = ('=-=-=-=-=-=[MENU]-=-=-=-=-=-=-=')
+    print(line)
+    print('[\033[35m(0)\033[m \033[1;35mPatricia\033[m - INFORMACOES ]')
+    print('[\033[35m(1)\033[m Seno,Cosseno,Tangente ]')
+    print('[\033[35m(2)\033[m ALUGUEL DE CARRO ]')
+    print('[\033[35m(3)\033[m ACHAR HIPOTENUSA ]')
+    print('[\033[35m(4)\033[m OBTER TRIGONOMETRIA EM CAT ] - PAG 417,AP 3')
+    print('[\033[35m(5)\033[m JUROS POR MES, ACUMULADO ] - PAG 382,AP 3')
+    print('[\033[35m(6)\033[m CONVERSOR DE BASE NUMERICA ]')
+    print('[\033[35m(7)\033[m GERENCIAMENTO DE PAGAMENTO ]')
+    print('[\033[35m(8)\033[m BHASKARA ]')
+    print('[\033[35m(9)\033[m DETERMINE X, TRIGONOMIA - PAG 413, AP 3')
+    print('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
+    print('\033[32m(DICA) \033[1;32mDigite o numero nos \033[35mparenteses\033[m')
+    resposta = str(input('R: '))
+    if resposta == '3':
+        cat1 = float(input('\033[m1 cateto: '))
+        cat2 = float(input('2 cateto: '))
+        hip = (cat1 ** 2) + (cat2 ** 2)
+        result = (hip ** (1 / 2))
+
+        print('A hipotenusa e igual a: {}'.format(result))
+        desejo1 = print('Deseja Continuar? (S/N)')
+        r = str(input('R: ')).upper()
+    elif resposta == '1':
+        angulo = float(input('Digite o Angulo que voce deseja: '))
+        seno = sin(radians(angulo))
+        cos = cos(radians(angulo))
+        tan = tan(radians(angulo))
+        print('O Angulo de {} tem o SENO de {:.3f}'.format(angulo, seno))
+        print('O Angulo de {} tem o COSSENO de {:.3f}'.format(angulo, cos))
+        print('O Angulo de {} tem a TANGENTE de {:.3f}'.format(angulo, tan))
+        desejo1 = print('Deseja Continuar? (S/N)')
+        r = str(input('R: ')).upper()
+    elif resposta == '2':
+        dias = float(input('Digite quantos dias alugados: '))
+        km = float(input('Digite quantos Km rodados: '))
+        rp = float(input('Digite quantos R$ por dia: '))
+        rp2 = float(input('Digite quantos R$ por Km: '))
+        resultado = (dias * rp) + (km * rp2)
+        print('O toltal a pagar seria de R${:.2f}'.format(resultado))
+        desejo1 = print('Deseja Continuar? (S/N)')
+        r = str(input('R: ')).upper()
+    elif resposta == '4':
+        seno = float(input('Digite a medida da Hipotenusa: '))
+        cosseno = float(input('Digite a medida do CAT Oposto: '))
+        tangente = float(input('Digite a medida do CAT Adja: '))
+
+        a1 = (cosseno / seno) #seno
+        a2 = (tangente / seno) #cosseno
+        a3 = (cosseno / tangente) #tangente
+
+
+        print('\033[34mSENO\033[m = {:.3f} '.format(a1))
+        print('\033[34mCOSSENO\033[m = {:.3f} '.format(a2))
+        print('\033[34mTANGENTE\033[m = {:.3f} '.format(a3))
+
+        desejo1 = print('Deseja Continuar? (S/N)')
+        r = str(input('R: ')).upper()
+    elif resposta == '5':
+        print('\033[32m(DICA) \033[1;32mNao passe de 12 meses!\033[m')
+        num = str(input('Quantos meses: '))
+        num2 = float(input('Quanto de juros: '))
+        num3 = float(input('Quantos R$: '))
+        rr = num3 * (num2 / 100)  # juros = 9%
+        r = num3 + rr  # 1
+        r2 = r * (num2 / 100)  # 1090 + 9% = 98.1
+        r3 = r + r2  # 2
+        r4 = r3 * (num2 / 100)  # 106.0
+        r5 = r3 + r4  # 3
+        r6 = r5 * (num2 / 100)
+        r7 = r5 + r6  # 4
+        r8 = r7 * (num2 / 100)
+        r9 = r7 + r8  # 5
+        r10 = r9 * (num2 / 100)
+        r11 = r9 + r10  # 6
+        r12 = r11 * (num2 / 100)
+        r13 = r11 + r12  # 7
+        r14 = r13 * (num2 / 100)
+        r15 = r13 + r14  # 8
+        r16 = r15 * (num2 / 100)
+        r17 = r15 + r16  # 9
+        r18 = r17 * (num2 / 100)
+        r19 = r17 + r18  # 10
+        r20 = r19 * (num2 / 100)
+        r21 = r19 + r20  # 11
+        r22 = r21 * (num2 / 100)
+        r23 = r21 + r22  # 12
+
+        if num == '3':
+            print('mes 1: R${:.2f}'.format(r))
+            print('mes 2: R${:.2f}'.format(r3))
+            print('mes 3: R${:.2f}'.format(r5))
+
+        elif num == '1':
+            print('mes 1: R${:.2f}'.format(r))
+
+        elif num == '2':
+            print('mes 1: R${:.2f}'.format(r))
+            print('mes 2: R${:.2f}'.format(r3))
+
+        elif num == '4':
+            print('mes 1: R${:.2F}'.format(r))
+            print('mes 2: R${:.2F}'.format(r3))
+            print('mes 3: R${:.2F}'.format(r5))
+            print('mes 4: R${:.2F}'.format(r7))
+
+        elif num == '5':
+            print('mes 1: R${:.2F}'.format(r))
+            print('mes 2: R${:.2F}'.format(r3))
+            print('mes 3: R${:.2F}'.format(r5))
+            print('mes 4: R${:.2F}'.format(r7))
+            print('mes 5: R${:.2F}'.format(r9))
+
+        elif num == '6':
+            print('mes 1: R${:.2F}'.format(r))
+            print('mes 2: R${:.2F}'.format(r3))
+            print('mes 3: R${:.2F}'.format(r5))
+            print('mes 4: R${:.2F}'.format(r7))
+            print('mes 5: R${:.2F}'.format(r9))
+            print('mes 6: R${:.2F}'.format(r11))
+
+        elif num == '7':
+            print('mes 1: R${:.2F}'.format(r))
+            print('mes 2: R${:.2F}'.format(r3))
+            print('mes 3: R${:.2F}'.format(r5))
+            print('mes 4: R${:.2F}'.format(r7))
+            print('mes 5: R${:.2F}'.format(r9))
+            print('mes 6: R${:.2F}'.format(r11))
+            print('mes 7: R${:.2F}'.format(r13))
+
+        elif num == '8':
+            print('mes 1: R${:.2F}'.format(r))
+            print('mes 2: R${:.2F}'.format(r3))
+            print('mes 3: R${:.2F}'.format(r5))
+            print('mes 4: R${:.2F}'.format(r7))
+            print('mes 5: R${:.2F}'.format(r9))
+            print('mes 6: R${:.2F}'.format(r11))
+            print('mes 7: R${:.2F}'.format(r13))
+            print('mes 8: R${:.2F}'.format(r15))
+
+        elif num == '9':
+            print('mes 1: R${:.2F}'.format(r))
+            print('mes 2: R${:.2F}'.format(r3))
+            print('mes 3: R${:.2F}'.format(r5))
+            print('mes 4: R${:.2F}'.format(r7))
+            print('mes 5: R${:.2F}'.format(r9))
+            print('mes 6: R${:.2F}'.format(r11))
+            print('mes 7: R${:.2F}'.format(r13))
+            print('mes 8: R${:.2F}'.format(r15))
+            print('mes 9: R${:.2F}'.format(r17))
+
+        elif num == '10':
+            print('mes 1: R${:.2F}'.format(r))
+            print('mes 2: R${:.2F}'.format(r3))
+            print('mes 3: R${:.2F}'.format(r5))
+            print('mes 4: R${:.2F}'.format(r7))
+            print('mes 5: R${:.2F}'.format(r9))
+            print('mes 6: R${:.2F}'.format(r11))
+            print('mes 7: R${:.2F}'.format(r13))
+            print('mes 8: R${:.2F}'.format(r15))
+            print('mes 9: R${:.2F}'.format(r17))
+            print('mes 10: R${:.2F}'.format(r19))
+
+        elif num == '11':
+            print('mes 1: R${:.2F}'.format(r))
+            print('mes 2: R${:.2F}'.format(r3))
+            print('mes 3: R${:.2F}'.format(r5))
+            print('mes 4: R${:.2F}'.format(r7))
+            print('mes 5: R${:.2F}'.format(r9))
+            print('mes 6: R${:.2F}'.format(r11))
+            print('mes 7: R${:.2F}'.format(r13))
+            print('mes 8: R${:.2F}'.format(r15))
+            print('mes 9: R${:.2F}'.format(r17))
+            print('mes 10: R${:.2F}'.format(r19))
+            print('mes 11: R${:.2F}'.format(r21))
+
+        elif num == '12':
+            print('mes 1: R${:.2F}'.format(r))
+            print('mes 2: R${:.2F}'.format(r3))
+            print('mes 3: R${:.2F}'.format(r5))
+            print('mes 4: R${:.2F}'.format(r7))
+            print('mes 5: R${:.2F}'.format(r9))
+            print('mes 6: R${:.2F}'.format(r11))
+            print('mes 7: R${:.2F}'.format(r13))
+            print('mes 8: R${:.2F}'.format(r15))
+            print('mes 9: R${:.2F}'.format(r17))
+            print('mes 10: R${:.2F}'.format(r19))
+            print('mes 11: R${:.2F}'.format(r21))
+            print('mes 12: R${:.2F}'.format(r23))
+
+        elif num != '1,2,3,4,5,6,7,8,9,10,11,12':
+            print('\033[31mPor favor tente novamente!\033[m')
+
+        desejo1 = print('Deseja Continuar? (S/N)')
+        r = str(input('R: ')).upper()
+    elif resposta == '6':
+        num = int(input('Digite um numero inteiro: '))
+
+        print('Escolha uma das bases para conversao:')
+        print('[ 1 ] Converter para BINARIO')
+        print('[ 2 ] Converter para OCTAL')
+        print('[ 3 ] Converter para HEXADECIMAL')
+
+        binario = bin(num)[2:]
+        octal = oct(num)[2:]
+        hexa = hex(num)[2:]
+
+        opcao = int(input('Sua opcao: '))
+        print('{}'.format('-=')*16)
+        if opcao == 1:
+            print('{} em BINARIO e igual a: {}'.format(num, binario))
+        elif opcao == 2:
+            print('{} em OCTAL e igual a: {}'.format(num, octal))
+        elif opcao == 3:
+            print('{} em HEXADECIMAL e igual a: {}'.format(num, hexa))
+        else:
+            print('Tente Novamente')
+        print('{}'.format('-=')*16)
+        desejo1 = print('Deseja Continuar? (S/N)')
+        r = str(input('R: ')).upper()
+    elif resposta == '7':
+        print('{:-^30}'.format('[LOJA]'))
+        preco = float(input('Valor ou Total das COMPRAS R$: '))
+        print('''{:-^30}
+[ 1 ] a vista dinheiro/cheque
+[ 2 ] a vista no cartao
+[ 3 ] 2x no cartao
+[ 4 ] 3x ou mais no cartao'''.format(' FORMAS DE PAGAMENTO '))
+        print('{:-^30}'.format('-'))
+
+        opcao = int(input('R: '))
+
+        if opcao == 1:
+            juro = float(input('Quanto de desconto?(%): '))
+            total = preco - (preco * juro / 100)  # 10%
+
+        elif opcao == 2:
+            juro = float(input('Quanto de desconto?(%): '))
+            total = preco - (preco * juro / 100)  # 5%
+
+        elif opcao == 3:
+            total = preco
+            parcela = total / 2
+            print('Sua compra sera parcelada em 2x de R${:.2f}'.format(parcela))
+
+        elif opcao == 4:
+            juro = float(input('Quanto de JUROS?(%): '))
+            total = preco + (preco * juro / 100)  # 20% de JUROS
+            totalparcelas = int(input('Quantas Parcelas ?: '))
+            parcela = total / totalparcelas
+            print('Sua compra sera parcelada em {}x de R${:.2f} com {}% de JUROS'.format(totalparcelas, parcela, juro))
+        else:
+            total = 0
+            print('\033[31mOPCAO INVALIDA DE PAGAMENTO')
+        print('Sua compra de R${:.2f} vai custar R${:.2f} no final.'.format(preco, total))
+        desejo1 = print('Deseja Continuar? (S/N)')
+        r = str(input('R: ')).upper()
+    elif resposta == '8':
+        print('\033[32m(EXEMPLO):\033[1;36m x²+2x-8=0\033[m ')
+        print('\033[32m(DICA):\033[1;36m "x²", tem que ser 1\033[m ')
+        a = float(input('Digite o coeficiente A = '))
+        b = float(input('Digite o coeficiente B = '))
+        c = float(input('Digite o coeficiente C = '))
+        delta = b**2-4*a*c
+        raizdelta = delta**0.5
+        x1=(-b+raizdelta)/(2*a)
+        x2=(-b-raizdelta)/2*a
+        print('\033[31mCalculando, Aguarde\033[m')
+        sleep(2)
+        if delta == 0:
+            raiz1 = (-b +math.sqrt(delta) / (2 * a))
+            print('x1 = ',raiz1)
+            print('Quer ver o resultado de Delta e a Raiz de Delta? (S/N)')
+            rs = str(input('R: ')).upper()
+            if rs == r:
+                print('-' * 27)
+                print('Delta = {:.2f}'.format(raizdelta))
+                print('Raiz de Delta = {:.2f} '.format(raizdelta))
+                print('-' * 27)
+                desejo1 = print('Deseja Continuar no [MENU]? (S/N)')
+                r = str(input('R: ')).upper()
+            elif rs != r or rs == 'N':
+                desejo1 = print('Deseja Continuar no [MENU]? (S/N)')
+                r = str(input('R: ')).upper()
+        else:
+            if delta < 0:
+                print('-'*27)
+                print('\033[31mEsta equacao nao possui raizes reais\033[m')
+                print('-'*27)
+                desejo1 = print('Deseja Continuar no [MENU]? (S/N)')
+                r = str(input('R: ')).upper()
+            else:
+                print('-'*27)
+                print('x1 = {:.1f}'.format(x1))
+                print('x2 = {:.1f}'.format(x2))
+                print('-'*27)
+                print('Quer ver o resultado de Delta e a Raiz de Delta? (S/N)')
+                #rs = str(input('R: ')).upper()
+                rs = str(input('R: ')).upper()
+                if rs == r:
+                    print('-' * 27)
+                    print('Delta = {:.2f}'.format(raizdelta))
+                    print('Raiz de Delta = {:.2f} '.format(raizdelta))
+                    print('-' * 27)
+                    desejo1 = print('Deseja Continuar no [MENU]? (S/N)')
+                    r = str(input('R: ')).upper()
+                elif rs != r or rs == 'N':
+                    desejo1 = print('Deseja Continuar no [MENU]? (S/N)')
+                    r = str(input('R: ')).upper()
+    elif resposta == '9':
+        import math
+        from math import sin, radians, cos, tan
+
+        angulo = int(input('Digite o Angulo: '))
+        print('''[ 1 ] Seno
+[ 2 ] Cosseno
+[ 3 ] Tangente ''')
+
+        print('\033[32m(DICA):\033[1;36m "x", tem que ser 1\033[m')
+
+        print('Qual sera o tipo de conta?')
+        r = str(input('R: '))
+
+        if r == '3':
+            opost = float(input('Digite o Cat. Oposto: '))
+            adj = float(input('Digite o Cat. Adj: '))
+            tan = tan(radians(angulo))  # 1.15
+            if adj == 1:  # 1 = x
+                cc = opost / tan
+                print('x = {:.1f}'.format(cc))
+            elif opost == 1:  # 1 = x
+                cc = adj / tan
+                print('x = {:.1f}'.format(cc))
+
+
+
+
+
+        elif r == '2':
+            hipo = float(input('Digite a Hipo: '))
+            adj = float(input('Digite o Cat. Adj: '))
+            adj1 = cos(radians(angulo))
+            if adj == 1:
+                ad = hipo / adj1
+                print('x = {:.1f}'.format(ad))
+            elif hipo == 1:
+                ad2 = adj / adj1
+                print('x = {:.1f}'.format(ad2))
+
+
+
+
+        elif r == '1':
+            opost = float(input('Digite o Cat. Oposto: '))
+            adj2 = float(input('Digite a Hipo: '))
+            sin = sin(radians(angulo))
+            if opost == 1:
+                sin1 = sin * adj2
+                print('x = {:.1f}'.format(sin1))
+            elif adj2 == 1:
+                sin2 = sin * adj2
+                print('x = {:.1f}'.format(sin2))
+
+        desejo1 = print('Deseja Continuar no [MENU]? (S/N)')
+        r = str(input('R: ')).upper()
+
+
+
+    elif resposta == '0':
+        print('{:-^35}'.format('-'))
+        print('Nome: \033[1;35mPatricia\033[m')
+        print('Raca: \033[1;36mBOT\033[m ')
+        print('Criacao: Feita por \033[1;31;4mPH\033[m ')
+        print('Criada Para Resolver Problemas do Dia Dia')
+        print('Versao: 3.0')
+        print('Disponibilidade: [docs.google] ou [drive.google]')
+        print('{:-^35}'.format('-'))
+        desejo1 = print('Deseja Continuar? (S/N)')
+        r = str(input('R: ')).upper()
+
+    elif resposta != '0,1,2,3,4,5,6,7,8,9':
+        while exit('{}'.format('\033[31mEssa opcao nao existe.\033[m')):
+            print(' ')
+
+
+
+
+
+
+
+
+
+
+print('Ate a proxima, \033[1;31;4m{}\033[m'.format(nome))
+
+
+
+
+
+#exemplo
+#desejo1 = print('Deseja Continuar? (S/N)')
+#r = str(input('R: '))
+
+
+#r = 'S'
+'''while r == 'S':
+    from math import radians, sin, cos, tan
+    line = ('=-=-') * 7
+    print(line)
+    print('[(1)Seno,Cosseno,Tangente ]')
+    print('[(2)ALUGUEL DE CARRO ]')
+    print('[(3)ACHAR HIPOTENUSA ]')
+    print('[ EM BREVE ]')
+    print('\033[32m(DICA) \033[1;32mDigite o numero nos parenteses\033[m')
+    resposta = str(input('R: '))
+    if resposta == '3':
+        cat1 = float(input('\033[m1 cateto: '))
+        cat2 = float(input('2 cateto: '))
+        hip = (cat1 ** 2) + (cat2 ** 2)
+        result = (hip ** (1 / 2))
+
+        print('A hipotenusa e igual a: {}'.format(result))
+        desejo1 = print('Deseja Continuar? (S/N)')
+        r = str(input('R: ')).upper()
+    elif resposta == '1':
+        angulo = float(input('Digite o Angulo que voce deseja: '))
+        seno = sin(radians(angulo))
+        cos = cos(radians(angulo))
+        tan = tan(radians(angulo))
+        print('O Angulo de {} tem o SENO de {:.3f}'.format(angulo, seno))
+        print('O Angulo de {} tem o COSSENO de {:.3f}'.format(angulo, cos))
+        print('O Angulo de {} tem a TANGENTE de {:.3f}'.format(angulo, tan))
+        desejo1 = print('Deseja Continuar? (S/N)')
+        r = str(input('R: ')).upper()
+    elif resposta == '2':
+        dias = float(input('Digite quantos dias alugados: '))
+        km = float(input('Digite quantos Km rodados: '))
+        rp = float(input('Digite quantos R$ por dia: '))
+        rp2 = float(input('Digite quantos R$ por Km: '))
+        resultado = (dias * rp) + (km * rp2)
+        print('O toltal a pagar seria de R${:.2f}'.format(resultado))
+        desejo1 = print('Deseja Continuar? (S/N)')
+        r = str(input('R: ')).upper()
+print('Ate a proxima, \033[1;31;4m{}\033[m'.format(nome))'''
+
